@@ -1,16 +1,32 @@
 <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock Timer</title>
+    <style>
+      #timer {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="timer"></p>
+    <script>
+      function updateTimer() {
+        const timerElement = document.getElementById("timer");
+        const now = new Date();
+        const formattedTime = now.toLocaleString();
+        timerElement.textContent = formattedTime;
+      }
 
-<html>
+      
+      updateTimer();
 
-<head>
-	<link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
-
-</body>
-
+      setInterval(updateTimer, 1000);
+    </script>
+  </body>
 </html>
